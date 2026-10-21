@@ -3,12 +3,13 @@
   "groupName": "PlayCall Prelaunch Waitlist",
   "mode": "embed",
   "hostedFormURL": "https://preview.mailerlite.io/forms/2725162/201768539077478020/share",
-  "doubleOptInRequired": true,
+  "doubleOptInRequired": false,
   "spamProtectionRequired": true,
   "fields": [
     "email"
   ],
   "accountId": "2725162",
   "formId": "5Lc0DN",
-  "dashboardFormId": "201768539077478020"
+  "dashboardFormId": "201768539077478020",
+  "optInMode": "single"
 }
