@@ -20,7 +20,7 @@
   "senderIdentityVerified": true,
   "providerTrackingReviewed": true,
   "doubleOptInVerified": true,
-  "unsubscribeVerified": false,
+  "unsubscribeVerified": true,
   "githubOwner": "mattschiaff",
   "waitlistRetentionMonthsActive": 12,
   "publicLaunchOnHold": false,
