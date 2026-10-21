@@ -48,3 +48,7 @@ node scripts/browser-check.mjs /private/tmp/playcall-website-checks
 Use PLAYCALL_CHROME for another Chrome executable and PLAYCALL_NODE_MODULES for an external Playwright installation. These layout checks do not themselves assert provider delivery or subscription confirmation. The website has no pip/npm runtime dependencies; Pillow is needed only to regenerate brand artwork with scripts/make_brand_assets.py.
 
 WAITLIST.md, PRIVACY-REVIEW.md and DEPLOYMENT.md retain preparation history. Their earlier hold/pending notes are superseded by the verified publication status above and the current release configuration. Production iPhone audio, PTT, routes, purchases and preferences are unchanged.
+
+## Single opt-in update — October 21, 2026
+
+The owner requested single opt-in. MailerLite form confirmation is disabled; consent checkbox, CAPTCHA, group identity and unsubscribe remain. Signup/success, welcome-email and website/privacy copy were updated. Existing subscriber records were not changed. The historical double-opt-in publication test above describes the previous setup. The release validator now requires the verified opt-in mode explicitly. No new real signup was submitted through CAPTCHA during this update.
