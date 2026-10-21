@@ -27,6 +27,6 @@
   "launchHoldReason": null,
   "providerSignupVerified": true,
   "manualUnsubscribeVerified": true,
-  "liveWebsiteWaitlistVerified": false,
+  "liveWebsiteWaitlistVerified": true,
   "subscriberFooterAddressApproved": true
 }
