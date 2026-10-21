@@ -1,2 +1,5 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /check-your-email.html
+Disallow: /confirmed.html
+Sitemap: https://mattschiaff.github.io/playcall-site/sitemap.xml

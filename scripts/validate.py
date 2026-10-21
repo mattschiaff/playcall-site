@@ -21,7 +21,7 @@ class Page(HTMLParser):
   if t=='nav' and not b.get('aria-label'):errors.append('Navigation lacks accessible name')
   if t=='form' and wait['mode']=='unconfigured':errors.append('Unexpected signup form while unconfigured')
   for k in ['href','src']:
-   if b.get(k):self.refs.append((b[k],t))
+   if b.get(k):self.refs.append((b[k],t,b.get('rel','')))
 pages={}
 for f in D.glob('*.html'):
  d=Page();d.feed(f.read_text());pages[f.resolve()]=d
@@ -29,11 +29,14 @@ for f in D.glob('*.html'):
  for meta in ['description','og:title','og:description','og:image','twitter:card']:
   if meta not in d.meta:errors.append(f.name+': missing '+meta)
 for f,d in pages.items():
- for ref,t in d.refs:
+ for ref,t,rel in d.refs:
   links+=1;u=urlsplit(ref)
   if u.scheme in ['https','mailto']:
    external.add(ref)
-   if t!='a' and 'mailerlite' not in (u.hostname or ''):errors.append('Unexpected external runtime dependency '+ref)
+   if t=='link' and rel=='canonical':
+    expected=(cfg.get('siteURL') or '').rstrip('/')+'/'+('' if f.name=='index.html' else f.name)
+    if ref!=expected:errors.append('Invalid canonical URL '+ref)
+   elif t!='a' and 'mailerlite' not in (u.hostname or ''):errors.append('Unexpected external runtime dependency '+ref)
    continue
   if u.scheme or u.netloc or u.path.startswith('/'):errors.append('Invalid/root-relative path '+ref);continue
   dest=(f.parent/unquote(u.path)).resolve() if u.path else f

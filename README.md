@@ -54,10 +54,8 @@ The website is a local review candidate, **not a verified public launch**. The d
 
 See `WAITLIST.md` for provider setup and verification, `PRIVACY-REVIEW.md` for pending approval decisions, and `DEPLOYMENT.md` for publishing and custom domains. Production iPhone audio, PTT, routes, purchases and preferences remain unchanged.
 
-## Explicit launch hold
+## Publication status — October 21, 2026
 
-On October 19, the developer approved the public operator name and waitlist retention schedule, and requested that launch stay on hold while a PO box/private mailbox is arranged. Do not publish, send a waitlist campaign, or use the existing private postal address in subscriber-facing footers. The local website and provider test form can still be reviewed.
+The developer approved publication and using the existing MailerLite postal address in subscriber-facing footers. That address is deliberately excluded from website source. Source is public at https://github.com/mattschiaff/playcall-site. The intended Pages address is https://mattschiaff.github.io/playcall-site/; deployment must be verified before calling it live.
 
-## GitHub source repository
-
-The separate public website repository is https://github.com/mattschiaff/playcall-site. Uploading source does not activate GitHub Pages. Public website deployment remains guarded pending the approved mailing address and remaining release checks. Only the standalone website files belong in this repository.
+Release configuration records each verified prerequisite separately. Actual outgoing-email unsubscribe and public-origin signup remain pending until their tests are completed; do not infer them from a static page or a dashboard preview. The manual Pages workflow retains the release validator. No launch announcement is authorized by website deployment.

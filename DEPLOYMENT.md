@@ -1,3 +1,5 @@
+> October 21 update: the developer approved website publication and the existing MailerLite subscriber-footer address. This supersedes the earlier postal-address hold below. Street-address details remain only in MailerLite. Verify outgoing unsubscribe and public-origin signup, and retain the guarded manual release workflow.
+
 # GitHub Pages publication and operations
 
 ## Current boundaries

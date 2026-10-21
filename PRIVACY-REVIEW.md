@@ -45,3 +45,9 @@ Sources: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance
 ## Verified provider test
 
 Fresh-address signup delivered its confirmation email. The developer confirmed it, and MailerLite showed Active membership with an explicit confirmation activation event. Operator-side unsubscribe changed only the test alias to Unsubscribed. No campaign was sent. The outgoing email unsubscribe link and live-site-origin signup still need testing after the approved mailing address is available.
+
+## October 21 update
+
+The developer explicitly approved using the existing address in MailerLite subscriber-facing footers and requested website publication. This supersedes the October 19 mailbox hold. No street address is included in this repository. The operator identity and retention schedule remain approved. Publication metadata targets the project-specific GitHub Pages HTTPS URL.
+
+A controlled delivery draft targets exactly the public support inbox, with optional open tracking, link tracking and UTM switches all observed off. Sending is paused for the operator to review MailerLite terms; actual receipt and email-link unsubscribe are not yet recorded as verified. Default confirmation links can redirect through MailerLite services. The policy explains this rather than promising measurement-free email. Native app distribution and final App Privacy review remain separate.
