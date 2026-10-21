@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Microphone audio",
+    "text": "PlayCall uses the iPhone microphone or your selected compatible microphone for one-way live audio to the catcher’s Bluetooth headphones. Audio is processed temporarily on the iPhone through Apple’s audio system. The prepared engine may keep accessing and processing microphone input between presses, while output forwarding is muted. Holding to talk enables forwarding; releasing stops forwarding. PlayCall does not save audio recordings or upload microphone audio to an internet server."
+  },
+  {
+    "title": "Saved on your iPhone",
+    "text": "PlayCall saves microphone and headphone names, iOS route identifiers and types, setup status, and the last setup-update time in its private app storage. Names may contain personal information if you named a device that way. Screen-awake and haptic preferences, guide progress, and whether you skipped or completed the guide are saved locally. PlayCall has no account system and does not request your name, email address, contacts, location, or advertising identifier for live communication."
+  },
+  {
+    "title": "Diagnostics",
+    "text": "Audio route snapshots, status events, timestamps, formats, and error details are held in app memory for troubleshooting. They may include device names and route identifiers. PlayCall also writes debug messages to Apple’s unified logging system; these include route information marked as public. System settings and diagnostic tools determine whether those messages are captured or retained. There is no app-owned diagnostic log file, analytics SDK, advertising SDK, or third-party crash-reporting SDK in this version."
+  },
+  {
+    "title": "Reports you choose to share",
+    "text": "Report an issue opens the iOS share sheet with a text template containing the PlayCall version/build and iOS version. It does not automatically attach microphone audio, route logs, or device names and identifiers. You choose the destination and what to send. Your selected sharing service may process the report, sender details, and attachments under its own privacy terms. A developer receives report information only if you send it to them or share it through a service such as TestFlight."
+  },
+  {
+    "title": "Apple services and external websites",
+    "text": "PlayCall does not use an app backend or direct iCloud synchronization. iOS may include local app data in device backups according to your backup settings. Apple’s TestFlight service automatically shares beta crash and usage information with the app provider and also shares feedback you submit; depending on the invitation, this may include your name and email address. App Store diagnostics may be shared according to Apple settings. These channels are separate from the app’s live audio path. Opening an official rules or Apple privacy link loads that website in your browser; the site receives normal web-request information under its own policy. PlayCall does not add audio or saved route identities to those links."
+  },
+  {
+    "title": "Purchases and trial verification",
+    "text": "PlayCall uses Apple StoreKit 2 for its 14-day trial and one-time permanent unlock when App Store products are configured. Apple handles purchase authentication and payment information; PlayCall does not receive your payment-card details or require a PlayCall account. StoreKit product requests, purchases, and user-requested restoration communicate with Apple. PlayCall verifies Apple-signed purchase information on the device. Product and transaction identifiers, original purchase dates, signing dates, environment, and revocation information are held in app memory to determine access. PlayCall does not create its own receipt or transaction-history file, upload purchase information to a PlayCall server, include it in issue-report templates, or log raw transactions. Apple manages its transaction records and device caches separately. This development build uses local Xcode test products only when explicitly enabled; production products have not been configured and LIVE purchase restrictions remain disabled."
+  },
+  {
+    "title": "Trial clock information",
+    "text": "To detect clock changes, PlayCall compares the device date with elapsed time within the running app and stores only the latest observed date in an environment-specific local file under PlayCallPurchases. It does not store a purchase identifier or access flag in that file. This information stays on the device, is excluded from app backups, and is not attached to reports. Clear Local Data resets audio setup and game/guide preferences, but leaves this separate trial-clock information and Apple purchase records intact. Deleting the app removes the local clock file; restoring purchases preserves the original Apple trial activation date. Local clock checks do not provide a tamper-proof clock or immediate offline refund detection."
+  },
+  {
+    "title": "Retention and deletion",
+    "text": "Local settings stay until changed or deleted. Forget saved audio setup removes the current setup file but preserves game preferences, guide progress, and any older migration backup. Clear Local Data is a separate, confirmed action that stops audio, cancels pending setup, and removes the current setup file, its schema-1 migration backup, PlayCall’s game and guide preference keys, and the two known temporary audio/tone files from the retired diagnostic recorder. It leaves unrelated files and system preferences alone. Audio stays paused until an explicit setup action. It does not erase existing in-memory session diagnostics, microphone permission, Apple-managed logs, device backups, TestFlight records, or reports already shared. Force-quit PlayCall to discard remaining in-memory session diagnostics; merely leaving the screen does not end the app process. Deleting the app rather than offloading it removes its local app data; backups and Apple records must be managed separately."
+  },
+  {
+    "title": "Your controls",
+    "text": "Microphone access is optional for browsing setup and Settings, but required for live communication. Review or revoke it in iPhone Settings → Privacy & Security → Microphone → PlayCall. You can change local game preferences, use Forget saved audio setup for the current setup file, or explicitly confirm Clear Local Data for the broader deletion described above. You choose whether and where to send an issue report. PlayCall has no control to disable TestFlight’s automatic beta crash and usage collection."
+  },
+  {
+    "title": "Support report retention",
+    "text": "The developer deletes support emails, downloaded logs and attachments, and downloaded TestFlight feedback within 90 days after the related issue is resolved. Non-identifying bug notes may be retained as needed. This covers developer-controlled copies, not Apple-managed TestFlight records. Deletion is a developer-operated process, not an automatic feature of PlayCall. Email providers, device backups, and other services may retain separate copies under their own policies; deleting an email does not delete downloaded attachments or copies in backups. Contact us to request deletion of information you sent to us."
+  },
+  {
+    "title": "Contact and policy updates",
+    "text": "Support and privacy contact: playcall.support@gmail.com. Public policy HTTPS address: [TO BE PROVIDED]. Provider identity and effective date: [TO BE PROVIDED]. The contact address and support retention terms have been approved by the developer. This policy remains a review draft pending publication details, operating-procedure verification, and production purchase configuration, Sandbox validation, and the final purchase privacy review. Future approved updates will identify a new effective date and appear in the app and on the public policy webpage before changed data practices take effect."
+  },
+  {
+    "title": "Optional trial reminders",
+    "text": "PlayCall can show a subtle in-app reminder during the final 72 hours of a verified trial. An optional, silent local notification can be scheduled 24 hours before expiration, only after an explanation, your consent, and iOS authorization. The reminder preference is saved on this iPhone. iOS stores the one-time local notification with the trial end date; it includes no transaction or device identifiers, audio, or purchase price. PlayCall uses no remote push service, backend, analytics, or account for reminders. Notification taps open PlayCall Access when it is safe to navigate and never purchase automatically. Turning off the notification or detecting a verified permanent unlock cancels the pending reminder. Clear Local Data turns this notification preference off and removes PlayCall’s pending/delivered trial reminder; it does not revoke iOS notification permission. You can review permission in iPhone Settings. Delivery can be delayed by iOS, and entitlement changes on other devices cannot cancel an already scheduled reminder until this app receives updated verified state."
+  }
+]
