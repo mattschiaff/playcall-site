@@ -1,5 +1,5 @@
 // Load the official provider widget only after the visitor's intentional action.
-// Subscription, errors and double opt-in remain owned by MailerLite.
+// Subscription and errors remain owned by MailerLite.
 const button=document.querySelector('[data-load-waitlist]');
 if(button)button.addEventListener('click',()=>{
  if(button.disabled)return;button.disabled=true;
@@ -8,7 +8,7 @@ if(button)button.addEventListener('click',()=>{
  target.append(template.content.cloneNode(true));
  for(const old of target.querySelectorAll('script')){const script=document.createElement('script');for(const a of old.attributes)script.setAttribute(a.name,a.value);script.textContent=old.textContent;old.replaceWith(script)}
  const observer=new MutationObserver(()=>{
-  if(target.querySelector('input[name="fields[email]"]')){status.textContent='Complete the signup form below, then check your email to confirm.';button.hidden=true;
+  if(target.querySelector('input[name="fields[email]"]')){status.textContent='Complete the signup form below to join. No email confirmation is needed.';button.hidden=true;
    const email=target.querySelector('input[name="fields[email]"]'),consent=target.querySelector('input[type="checkbox"]'),errors=document.querySelector('#waitlist-errors');
    if(email){email.id='playcall-waitlist-email';email.required=true;email.autocomplete='email';email.setAttribute('aria-label','Email address');email.setAttribute('aria-describedby','waitlist-errors');const label=email.closest('.ml-field-group')?.querySelector('label');if(label)label.htmlFor=email.id;
     email.addEventListener('invalid',()=>{errors.textContent='Enter a valid email address to join the waitlist.';email.setAttribute('aria-invalid','true')});
