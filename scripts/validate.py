@@ -59,10 +59,15 @@ for f in [p for p in R.rglob('*') if '.git' not in p.parts and '__pycache__' not
   if re.search(r'(ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY|Bearer [A-Za-z0-9._-]{20,})',text):errors.append('Possible credential '+str(f))
 if a.release:
  if cfg.get('publicLaunchOnHold'):errors.append('Developer hold: arrange approved subscriber-facing postal address before public launch')
- for k in ['publicationApproved','websitePrivacyApproved','waitlistRetentionApproved','hostingPrivacyReviewed','providerFormReviewed','providerTrackingReviewed','senderIdentityVerified','waitlistVerified','doubleOptInVerified','unsubscribeVerified']:
+ for k in ['publicationApproved','websitePrivacyApproved','waitlistRetentionApproved','hostingPrivacyReviewed','providerFormReviewed','providerTrackingReviewed','senderIdentityVerified','waitlistVerified','unsubscribeVerified']:
   if cfg.get(k) is not True:errors.append('Release gate: '+k)
  for k in ['providerName','effectiveDate','siteURL','repositoryURL','policyURL']:
   if not cfg.get(k):errors.append('Missing publication input: '+k)
+ if wait.get('doubleOptInRequired') is True:
+  if cfg.get('doubleOptInVerified') is not True:errors.append('Release gate: doubleOptInVerified')
+ elif wait.get('optInMode')=='single':
+  if cfg.get('singleOptInVerified') is not True:errors.append('Release gate: singleOptInVerified')
+ else:errors.append('Release gate: explicit verified opt-in mode required')
  if wait['mode']=='unconfigured':errors.append('Waitlist is not activated')
  for f in D.glob('*.html'):
   if re.search(r'\[TO BE PROVIDED\]|review draft|local review preview|proposed for approval',f.read_text(),re.I):errors.append('Unresolved public draft '+f.name)
